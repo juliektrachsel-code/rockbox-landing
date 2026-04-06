@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockBox - Premium Wooden Baby Rocker | Swiss Design | Coming 2026</title>
+    <meta name="description" content="The premium wooden baby rocker Swiss parents trust. Sustainable, safe, CE-certified. Join the waitlist for CHF 30 off. Free shipping in Switzerland.">
+    <meta property="og:title" content="RockBox - Better Sleep, Beautiful Design">
+    <meta property="og:description" content="The wooden baby rocker that Swiss parents love. Join 200+ parents on the waitlist.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rockboxbaby.ch">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪵</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest: #2C5F2D;
+            --moss: #97BC62;
+            --cream: #F5F5EC;
+            --terracotta: #B85042;
+            --white: #FFFFFF;
+            --charcoal: #36454F;
+            --gray: #8C8C8C;
+            --light-gray: #E8E8E0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--charcoal);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--forest);
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--light-gray);
+            padding: 12px 0;
+        }
+
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--forest);
+            text-decoration: none;
+        }
+
+        nav .nav-cta {
+            background: var(--forest);
+            color: var(--white);
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        nav .nav-cta:hover { background: #234d24; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 720px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            color: var(--forest);
+            margin-bottom: 24px;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: var(--charcoal);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .hero .waitlist-counter {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .hero .waitlist-counter span {
+            color: var(--forest);
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--forest);
+            color: var(--white);
+            padding: 16px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #234d24;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--forest);
+            padding: 16px 40px;
+            border: 2px solid var(--forest);
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--forest);
+            color: var(--white);
+        }
+
+        .hero-image-placeholder {
+            margin: 60px auto 0;
+            max-width: 600px;
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: var(--light-gray);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .hero-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* SOCIAL PROOF BAR */
+        .proof-bar {
+            background: var(--forest);
+            padding: 24px 0;
+        }
+
+        .proof-items {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .proof-item {
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .proof-item .icon {
+            width: 24px;
+            height: 24px;
+            background: var(--moss);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        /* PROBLEM SECTION */
+        .problem {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .problem-content {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .problem h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 32px;
+        }
+
+        .problem-list {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .problem-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .problem-list li .x-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: #FFE5E5;
+            color: var(--terracotta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        .problem .closing {
+            margin-top: 32px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--forest);
+        }
+
+        /* VALUE PROPS */
+        .value-props {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+
+        .value-props h2 {
+            text-align: center;
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 60px;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 36px;
+            border-radius: 16px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover { transform: translateY(-4px); }
+
+        .value-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 15px;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        .value-card .card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--forest);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--forest);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.85);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .cta-benefit {
+            color: var(--moss);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 16px 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-form input::placeholder { color: rgba(255,255,255,0.5); }
+
+        .cta-form button {
+            background: var(--moss);
+            color: var(--forest);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-form button:hover { background: #a8d472; }
+
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            max-width: 720px;
+            margin: 0 auto 24px;
+            border-bottom: 1px solid var(--light-gray);
+            padding-bottom: 24px;
+        }
+
+        .faq-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--charcoal);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--forest);
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            content: '\2212';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding-top: 12px;
+            font-size: 15px;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.6);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a { color: var(--moss); text-decoration: none; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        .modal h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .modal p {
+            font-size: 15px;
+            color: var(--charcoal);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .modal form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .modal form input, .modal form select {
+            padding: 14px 16px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .modal form button {
+            background: var(--forest);
+            color: var(--white);
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        /* CONFIRMATION */
+        .confirmation {
+            display: none;
+            text-align: center;
+        }
+
+        .confirmation .checkmark {
+            width: 64px;
+            height: 64px;
+            background: var(--forest);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 28px;
+            margin: 0 auto 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .proof-items { gap: 20px; }
+            .proof-item { font-size: 13px; }
+            .hero-buttons { gap: 12px; }
+            .cta-section { padding: 60px 20px; }
+            .modal { padding: 32px 24px; }
+            .value-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content { animation: fadeInUp 0.8s ease-out; }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="container">
+        <a href="#" class="logo">RockBox</a>
+        <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1>Better sleep for your baby. Beautiful design for your nursery.</h1>
+        <p class="subtitle">The premium wooden baby rocker that Swiss parents trust. Sustainable, safe, and designed to grow with your child.</p>
+        <p class="waitlist-counter">Join <span>200+</span> Swiss parents on the early access list</p>
+        <div class="hero-buttons">
+            <a href="#waitlist" class="btn-primary">Join the Waitlist - Save CHF 30</a>
+            <button class="btn-secondary" id="buyNowBtn">Reserve Yours Now - CHF 199</button>
+        </div>
+        <div class="hero-image-placeholder">
+            <!-- Replace with AI-generated hero image -->
+            <span>Product hero image coming soon</span>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<section class="proof-bar">
+    <div class="container">
+        <div class="proof-items">
+            <div class="proof-item"><span class="icon">✓</span> Designed in Switzerland</div>
+            <div class="proof-item"><span class="icon">✓</span> CE Certified Safety</div>
+            <div class="proof-item"><span class="icon">✓</span> Sustainable Wood</div>
+            <div class="proof-item"><span class="icon">✓</span> Free Shipping CH</div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+    <div class="container problem-content">
+        <h2>Why did we build RockBox?</h2>
+        <ul class="problem-list">
+            <li><span class="x-icon">✕</span><span><strong>Plastic construction</strong> that looks cheap in a carefully designed nursery</span></li>
+            <li><span class="x-icon">✕</span><span><strong>No safe sleep solution</strong> integrated with a gentle rocking motion</span></li>
+            <li><span class="x-icon">✕</span><span><strong>Unclear certifications</strong> on popular Amazon brands</span></li>
+            <li><span class="x-icon">✕</span><span><strong>Short lifespan</strong> -- most rockers are outgrown in 6 months</span></li>
+            <li><span class="x-icon">✕</span><span><strong>Zero sustainability</strong> -- another piece of plastic destined for landfill</span></li>
+        </ul>
+        <p class="closing">We believed there had to be a better way. So we designed one.</p>
+    </div>
+</section>
+
+<!-- VALUE PROPOSITION -->
+<section class="value-props">
+    <div class="container">
+        <h2>The RockBox Difference</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="card-icon">🇨🇭</div>
+                <h3>Swiss Quality, Naturally Beautiful</h3>
+                <p>Hand-finished solid wood construction. Food-safe natural oils and finishes. Every piece inspected before it leaves our workshop.</p>
+            </div>
+            <div class="value-card">
+                <div class="card-icon">👶</div>
+                <h3>Designed to Grow With Your Child</h3>
+                <p>From newborn naps to toddler quiet time. The adjustable RockBox adapts as your baby grows -- serving your family for years, not months.</p>
+            </div>
+            <div class="value-card">
+                <div class="card-icon">🛡️</div>
+                <h3>CE Certified. Tested. Documented.</h3>
+                <p>Full EN 12790 and REACH compliance. SGS/TÜV tested. Complete technical documentation. Safety isn't negotiable.</p>
+            </div>
+            <div class="value-card">
+                <div class="card-icon">🌿</div>
+                <h3>Sustainable by Design</h3>
+                <p>Sustainably sourced European wood. Biodegradable packaging. A product your grandchildren could use -- and love -- someday.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WAITLIST CTA -->
+<section class="cta-section" id="waitlist">
+    <div class="container">
+        <h2>Be Among the First to Experience RockBox</h2>
+        <p>We're finalizing CE certification and preparing our first production run. Join the waitlist for early access and exclusive benefits.</p>
+        <div class="cta-benefits">
+            <span class="cta-benefit">✓ Early access to pre-orders</span>
+            <span class="cta-benefit">✓ CHF 30 launch discount</span>
+            <span class="cta-benefit">✓ Free shipping in CH</span>
+            <span class="cta-benefit">✓ Priority on first batch</span>
+        </div>
+        <form class="cta-form" id="waitlistForm">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <button type="submit">Join the Waitlist</button>
+        </form>
+        <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 16px;">No spam. Unsubscribe anytime. We'll only email you about launch updates.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <h2>Questions? We've got answers.</h2>
+
+        <div class="faq-item">
+            <h4 class="faq-toggle">When will RockBox be available?</h4>
+            <div class="faq-answer">
+                <p>We're targeting Q3 2026 for our launch. Waitlist members will be notified first and can pre-order before anyone else.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h4 class="faq-toggle">Is RockBox safe for newborns?</h4>
+            <div class="faq-answer">
+                <p>Yes. RockBox is being designed and tested to meet EN 12790 and EN 1466 safety standards. Full CE certification and third-party testing (SGS/TUV) will be completed before launch.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h4 class="faq-toggle">What age range is suitable?</h4>
+            <div class="faq-answer">
+                <p>From newborn (with appropriate insert) up to approximately 3 years old, depending on weight capacity (final specs pending certification).</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h4 class="faq-toggle">Where will RockBox be made?</h4>
+            <div class="faq-answer">
+                <p>In Switzerland or the DACH region. We're committed to European manufacturing quality and short supply chains.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h4 class="faq-toggle">What will RockBox cost?</h4>
+            <div class="faq-answer">
+                <p>The expected retail price is CHF 189-249. Waitlist members save CHF 30 on their first order.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>RockBox | Swiss-designed wooden baby rocker | Coming 2026</p>
+        <div class="footer-links">
+            <a href="#" rel="noopener">Instagram</a>
+            <a href="#" rel="noopener">TikTok</a>
+            <a href="#" rel="noopener">Pinterest</a>
+        </div>
+        <p>&copy; 2026 RockBox. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- FAKE DOOR MODAL -->
+<div class="modal-overlay" id="preorderModal">
+    <div class="modal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div id="modalForm">
+            <div style="width:64px;height:64px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:28px;margin:0 auto 20px">🎯</div>
+            <h3>You're #<span id="queueNum">___</span> in line!</h3>
+            <p>We're finalizing our CE certification and expect to open pre-orders in Q3 2026. Leave your details below and we'll notify you the moment orders open.</p>
+            <form id="preorderForm">
+                <input type="text" name="firstname" placeholder="First name" required>
+                <input type="text" name="lastname" placeholder="Last name" required>
+                <input type="email" name="email" placeholder="Email address" required>
+                <input type="tel" name="phone" placeholder="Phone (optional)">
+                <select name="source">
+                    <option value="" disabled selected>How did you hear about us?</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="tiktok">TikTok</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="google">Google Search</option>
+                    <option value="friend">Friend/Family</option>
+                    <option value="blog">Blog/Press</option>
+                    <option value="other">Other</option>
+                </select>
+                <button type="submit">Notify Me When Ready</button>
+            </form>
+        </div>
+        <div class="confirmation" id="preorderConfirmation">
+            <div class="checkmark">✓</div>
+            <h3>You're Registered!</h3>
+            <p>We'll be in touch soon with early access. Meanwhile, follow us on <a href="#" style="color:var(--forest);font-weight:600;">Instagram</a> for updates.</p>
+            <p style="font-size:13px;color:var(--gray);">Check your email for confirmation.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            toggle.parentElement.classList.toggle('active');
+        });
+    });
+
+    // Fake Door Modal
+    const buyBtn = document.getElementById('buyNowBtn');
+    const modal = document.getElementById('preorderModal');
+    const modalClose = document.getElementById('modalClose');
+
+    buyBtn.addEventListener('click', () => {
+        // Track the fake door click
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'buy_now_click', { page_path: window.location.pathname });
+        }
+        document.getElementById('queueNum').textContent = Math.floor(Math.random() * 200) + 50;
+        modal.classList.add('active');
+    });
+
+    modalClose.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+
+    // Pre-order form submit
+    document.getElementById('preorderForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'preorder_form_submit');
+        }
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('preorderConfirmation').style.display = 'block';
+    });
+
+    // Waitlist form submit
+    document.getElementById('waitlistForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'waitlist_signup');
+        }
+        e.target.innerHTML = '<p style="color:white;font-size:18px;font-weight:600">✓ You\'re on the list! Check your email.</p>';
+    });
+</script>
+
+<!-- Google Analytics 4 placeholder -->
+<!-- Replace GA_MEASUREMENT_ID with your actual ID -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+  gtag('event', 'page_view', { page_title: 'RockBox Landing Page' });
+</script> -->
+
+</body>
+</html>
