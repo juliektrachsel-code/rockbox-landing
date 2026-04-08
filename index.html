@@ -812,22 +812,64 @@
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
 
     // Pre-order form submit
-    document.getElementById('preorderForm').addEventListener('submit', (e) => {
+    document.getElementById('preorderForm').addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'preorder_form_submit');
+        const form = e.target;
+        const email = form.querySelector('input[name="email"]').value;
+        const firstName = form.querySelector('input[name="firstname"]').value;
+        const lastName = form.querySelector('input[name="lastname"]').value;
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Submitting...';
+        btn.disabled = true;
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, firstName, lastName, type: 'preorder' }),
+            });
+            if (res.ok) {
+                if (typeof gtag !== 'undefined') gtag('event', 'preorder_form_submit');
+                document.getElementById('modalForm').style.display = 'none';
+                document.getElementById('preorderConfirmation').style.display = 'block';
+            } else {
+                btn.textContent = 'Try again';
+                btn.disabled = false;
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            btn.textContent = 'Try again';
+            btn.disabled = false;
+            alert('Network error. Please try again.');
         }
-        document.getElementById('modalForm').style.display = 'none';
-        document.getElementById('preorderConfirmation').style.display = 'block';
     });
 
     // Waitlist form submit
-    document.getElementById('waitlistForm').addEventListener('submit', (e) => {
+    document.getElementById('waitlistForm').addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'waitlist_signup');
+        const form = e.target;
+        const email = form.querySelector('input[type="email"]').value;
+        const btn = form.querySelector('button');
+        btn.textContent = 'Adding you...';
+        btn.disabled = true;
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, type: 'waitlist' }),
+            });
+            if (res.ok) {
+                if (typeof gtag !== 'undefined') gtag('event', 'waitlist_signup');
+                form.innerHTML = '<p style="color:white;font-size:18px;font-weight:600">✓ You\'re on the list! Check your email.</p>';
+            } else {
+                btn.textContent = 'Try again';
+                btn.disabled = false;
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            btn.textContent = 'Try again';
+            btn.disabled = false;
+            alert('Network error. Please try again.');
         }
-        e.target.innerHTML = '<p style="color:white;font-size:18px;font-weight:600">✓ You\'re on the list! Check your email.</p>';
     });
 </script>
 
