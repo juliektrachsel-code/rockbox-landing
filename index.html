@@ -592,6 +592,311 @@
         }
 
         .hero-content { animation: fadeInUp 0.8s ease-out; }
+
+        /* HERO IMAGE */
+        .hero-image-placeholder {
+            margin: 60px auto 0;
+            max-width: 700px;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+        .hero-image-placeholder img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* GALLERY */
+        .gallery-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.03); }
+        .gallery-item--large { min-height: 360px; }
+        .gallery-item:not(.gallery-item--large) { min-height: 200px; }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.55));
+            color: #fff;
+            padding: 20px 16px 14px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item--large { min-height: 240px; }
+        }
+
+        /* APP SECTION */
+        .app-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        .app-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .section-badge {
+            display: inline-block;
+            background: var(--moss);
+            color: var(--forest);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .app-text h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 16px;
+        }
+        .app-intro {
+            font-size: 16px;
+            color: var(--charcoal);
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+        .app-features {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .app-feature {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .app-feature-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: var(--cream);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .app-feature-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .app-feature-text strong {
+            font-size: 15px;
+            color: var(--forest);
+        }
+        .app-feature-text span {
+            font-size: 14px;
+            color: var(--charcoal);
+            line-height: 1.5;
+        }
+
+        /* PHONE MOCKUP */
+        .app-phone-wrap {
+            display: flex;
+            justify-content: center;
+        }
+        .phone-frame {
+            width: 260px;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 16px 10px 24px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.25), inset 0 0 0 2px #333;
+            position: relative;
+        }
+        .phone-notch {
+            width: 80px;
+            height: 22px;
+            background: #1a1a1a;
+            border-radius: 0 0 14px 14px;
+            margin: 0 auto 8px;
+            position: relative;
+            z-index: 2;
+        }
+        .phone-screen {
+            background: #f5f5ec;
+            border-radius: 28px;
+            overflow: hidden;
+            min-height: 480px;
+        }
+        .app-ui {
+            padding: 16px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .app-ui-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .app-ui-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--forest);
+        }
+        .app-ui-dot {
+            font-size: 10px;
+            color: #4caf50;
+            font-weight: 600;
+        }
+        .app-ui-status-card {
+            background: var(--forest);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .cradle-anim {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .cradle-body {
+            width: 30px;
+            height: 20px;
+            border: 3px solid var(--moss);
+            border-radius: 4px;
+            position: absolute;
+            top: 4px; left: 5px;
+            animation: rock 2s ease-in-out infinite;
+            transform-origin: 50% 100%;
+        }
+        .cradle-runner {
+            width: 36px;
+            height: 8px;
+            border-bottom: 3px solid var(--moss);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 4px; left: 2px;
+        }
+        @keyframes rock {
+            0%,100% { transform: rotate(-8deg); }
+            50% { transform: rotate(8deg); }
+        }
+        .status-badge {
+            background: var(--moss);
+            color: var(--forest);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .app-ui-block {
+            background: #fff;
+            border-radius: 14px;
+            padding: 12px;
+        }
+        .block-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .timer-display {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--forest);
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .timer-pills {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+        }
+        .pill {
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 20px;
+            background: var(--light-gray);
+            color: var(--charcoal);
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .pill.active {
+            background: var(--forest);
+            color: #fff;
+        }
+        .intensity-bar {
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            margin: 6px 0 4px;
+            overflow: hidden;
+        }
+        .intensity-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--moss), var(--forest));
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        .intensity-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            color: var(--gray);
+            margin-bottom: 6px;
+        }
+        .intensity-level { color: var(--forest); font-weight: 700; }
+        .intensity-dots-row {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+        }
+        .idot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--light-gray);
+        }
+        .idot.on { background: var(--forest); }
+        .app-pause-btn {
+            width: 100%;
+            background: var(--terracotta);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        @media (max-width: 768px) {
+            .app-layout { grid-template-columns: 1fr; gap: 48px; }
+            .app-phone-wrap { order: -1; }
+        }
     </style>
 </head>
 <body>
@@ -615,8 +920,7 @@
             <button class="btn-secondary" id="buyNowBtn">Jetzt reservieren — CHF 199</button>
         </div>
         <div class="hero-image-placeholder">
-            <!-- Replace with AI-generated hero image -->
-            <span>Produktbild folgt bald</span>
+            <img src="hero.png" alt="RockBox – Holzwiege im Kinderzimmer" loading="eager">
         </div>
     </div>
 </section>
@@ -629,6 +933,7 @@
             <div class="proof-item"><span class="icon">✓</span> CE-zertifizierte Sicherheit</div>
             <div class="proof-item"><span class="icon">✓</span> Nachhaltiges Holz</div>
             <div class="proof-item"><span class="icon">✓</span> Kostenloser Versand CH</div>
+            <div class="proof-item"><span class="icon">✓</span> App-Steuerung via Bluetooth</div>
         </div>
     </div>
 </section>
@@ -645,6 +950,22 @@
             <li><span class="x-icon">✕</span><span><strong>Null Nachhaltigkeit</strong> — noch ein Plastikteil auf dem Weg zur Mülldeponie</span></li>
         </ul>
         <p class="closing">Wir wussten: Es muss einen besseren Weg geben. Also haben wir ihn entworfen.</p>
+    </div>
+</section>
+
+<!-- PRODUCT GALLERY -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item--large">
+                <img src="closeup.png" alt="RockBox Nahaufnahme – Holzdetail und Mechanismus" loading="lazy">
+                <div class="gallery-caption">Schweizer Handwerkskunst im Detail</div>
+            </div>
+            <div class="gallery-item">
+                <img src="stroller.png" alt="RockBox am Kinderwagen befestigt" loading="lazy">
+                <div class="gallery-caption">Universell — passt an jeden Kinderwagen</div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -672,6 +993,95 @@
                 <div class="card-icon">🌿</div>
                 <h3>Nachhaltig by Design</h3>
                 <p>Nachhaltig beschafftes europäisches Holz. Biologisch abbaubare Verpackung. Ein Produkt, das auch deine Enkelkinder eines Tages benutzen — und lieben — könnten.</p>
+            </div>
+            <div class="value-card">
+                <div class="card-icon">📱</div>
+                <h3>Per App steuerbar</h3>
+                <p>Bluetooth-Verbindung. Timer, Intensität und Zeitplan direkt vom Handy — ohne das Kinderzimmer zu betreten.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- APP CONTROL -->
+<section class="app-section">
+    <div class="container">
+        <div class="app-layout">
+            <div class="app-text">
+                <div class="section-badge">RockBox App</div>
+                <h2>Volle Kontrolle.<br>Direkt vom Handy.</h2>
+                <p class="app-intro">Die RockBox App verbindet sich per Bluetooth. Timer setzen, Intensität anpassen, Einschlafroutinen planen — alles still vom Sofa aus.</p>
+                <div class="app-features">
+                    <div class="app-feature">
+                        <div class="app-feature-icon">⏱️</div>
+                        <div class="app-feature-text">
+                            <strong>Timer</strong>
+                            <span>10, 20, 30 Min. oder individuell. Die Wiege stoppt automatisch — kein Eingreifen nötig.</span>
+                        </div>
+                    </div>
+                    <div class="app-feature">
+                        <div class="app-feature-icon">🎚️</div>
+                        <div class="app-feature-text">
+                            <strong>Intensität</strong>
+                            <span>5 Stufen von sanft bis kräftig. Perfekt abstimmbar auf dein Baby.</span>
+                        </div>
+                    </div>
+                    <div class="app-feature">
+                        <div class="app-feature-icon">📅</div>
+                        <div class="app-feature-text">
+                            <strong>Zeitplan</strong>
+                            <span>Einschlafrituale vorplanen. RockBox startet automatisch zur gesetzten Zeit.</span>
+                        </div>
+                    </div>
+                    <div class="app-feature">
+                        <div class="app-feature-icon">🔔</div>
+                        <div class="app-feature-text">
+                            <strong>Benachrichtigungen</strong>
+                            <span>Timer-Ende, Akku-Status und Sicherheitshinweise direkt aufs Handy.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-phone-wrap">
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="app-ui">
+                            <div class="app-ui-header">
+                                <span class="app-ui-title">🪵 RockBox</span>
+                                <span class="app-ui-dot">● Verbunden</span>
+                            </div>
+                            <div class="app-ui-status-card">
+                                <div class="cradle-anim">
+                                    <div class="cradle-body"></div>
+                                    <div class="cradle-runner"></div>
+                                </div>
+                                <span class="status-badge">Aktiv</span>
+                            </div>
+                            <div class="app-ui-block">
+                                <div class="block-label">⏱ Timer</div>
+                                <div class="timer-display">20:00</div>
+                                <div class="timer-pills">
+                                    <span class="pill">10 Min</span>
+                                    <span class="pill active">20 Min</span>
+                                    <span class="pill">30 Min</span>
+                                    <span class="pill">∞</span>
+                                </div>
+                            </div>
+                            <div class="app-ui-block">
+                                <div class="block-label">🎚 Intensität</div>
+                                <div class="intensity-bar">
+                                    <div class="intensity-fill" style="width:60%"></div>
+                                </div>
+                                <div class="intensity-labels"><span>Sanft</span><span class="intensity-level">Stufe 3</span><span>Kräftig</span></div>
+                                <div class="intensity-dots-row">
+                                    <span class="idot on"></span><span class="idot on"></span><span class="idot on"></span><span class="idot"></span><span class="idot"></span>
+                                </div>
+                            </div>
+                            <button class="app-pause-btn">⏸ Pause</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -726,6 +1136,13 @@
             <h4 class="faq-toggle">Wo wird RockBox hergestellt?</h4>
             <div class="faq-answer">
                 <p>In der Schweiz oder im DACH-Raum. Wir setzen auf europäische Fertigungsqualität und kurze Lieferketten.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h4 class="faq-toggle">Wie funktioniert die App-Steuerung?</h4>
+            <div class="faq-answer">
+                <p>Die RockBox App verbindet sich per Bluetooth (bis 10 m Reichweite) mit der Wiege. Du kannst Timer von 5 bis 120 Minuten setzen, zwischen 5 Intensitätsstufen wählen und Einschlafroutinen planen. Die App ist kostenlos für iOS und Android — verfügbar zum Launch.</p>
             </div>
         </div>
 
