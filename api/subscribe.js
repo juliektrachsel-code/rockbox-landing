@@ -9,7 +9,7 @@ const TAG_IDS = {
   preorder: 18828356,
 };
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -53,8 +53,6 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Failed to create subscriber' });
     }
 
-    const subscriberId = subData.subscriber?.id;
-
     // 2. Apply tag
     await fetch(`${KIT_BASE}/tags/${tagId}/subscribers`, {
       method: 'POST',
@@ -65,10 +63,10 @@ export default async function handler(req, res) {
       body: JSON.stringify({ email_address: email }),
     });
 
-    return res.status(200).json({ success: true, subscriber_id: subscriberId });
+    return res.status(200).json({ success: true });
 
   } catch (err) {
     console.error('Subscribe error:', err);
     return res.status(500).json({ error: 'Internal server error' });
   }
-}
+};
